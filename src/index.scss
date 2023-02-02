@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+
+  html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+
+  body {
+    @apply bg-[#ffffff] h-[100vh] font-normal text-gray-800 leading-relaxed flex justify-center items-center;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+}
+
+@layer components {
+  .container {
+    @apply w-[100vw] h-[100vh]  pl-[15vw] pt-[25vh] bg-center bg-cover md:bg-cover md:bg-center  md:pl-[30vw] lg:pl-[20vw] md:pt-[30vh] flex flex-col justify-start items-center  relative;
+    /* ROBOT.GIF from Giphy - https://giphy.com/gifs/robot-cinema-4d-eyedesyn-3o7abtn7DuREEpsyWY */
+    background-image: url("./assets/bot.gif");
+    background-size: contain;
+    // background-position: left center;
+    background-repeat: no-repeat;
+  }
+  .btn {
+    cursor: pointer;
+    outline: none;
+    width: 200px;
+    height: 50px;
+    font-family: Courier, monospace;
+    font-size: 20px;
+    color: white;
+    background: #ff3482;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      filter: brightness(95%);
+    }
+    &:active {
+      transform: translate(0, 0.2rem);
+      box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.3);
+    }
+    &:disabled {
+      @apply bg-gray-400 cursor-not-allowed;
+    }
+  }
+}
