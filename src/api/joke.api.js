@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const jokeUrl =
-  "https://sv443.net/jokeapi/v2/joke/any?blacklistFlags=nsfw,racist,sexist,explicit";
+  "https://sv443.net/jokeapi/v2/joke/any";
 
 export const getJoke = async () => {
   const res = await axios.get(jokeUrl);
